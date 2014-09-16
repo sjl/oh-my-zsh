@@ -1,7 +1,3 @@
-if [ "x$OH_MY_ZSH_HG" = "x" ]; then
-    OH_MY_ZSH_HG="hg"
-fi
-
 function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
@@ -28,5 +24,4 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-local return_status="%{$fg[red]%}%(?..✘)%{$reset_color%}"
-RPROMPT='${return_status}%{$reset_color%}'
+RPROMPT='%(?..%{$fg[red]%}✘%{$reset_color%})'
